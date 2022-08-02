@@ -4,6 +4,23 @@ Originally, computer program executes rules provided by humans. But, in some app
 
 Social science resesarchers are familiar with various types of statistical analysis methods. Fortunately, these methods are very similar to popular machine learning methods.
 
+__Statistical Analysis vs Machine Learning___
+
+|         | Social Science     | Machine Learning |
+|---------| :----------------: | :--------------: |
+| Purpose | Hypothesis testing | Predicting       |
+
+__Types of Machine Learning Methods__
+
+Unlike statistical analysis, the purpose of machine learning is to predict value which is unknown at the time of prediction. The value is either continous or binary. For example, for house price estimation, it is continouse number. But, for estimating whether the patient have a caner or not is binary value. The other types of problem is that there are lots of data and we woule like to cluster them into multiple groups with similar characteristics. 
+
+| Binary Prediction | Multiclass Prediction | Clustering |
+| ----------------- | --------------------- | ---------- |
+| Logistic regression | Linear Regression | K-means |
+| Support Vector Machine | KNN | Topic Modeling |
+
+This tutorial consists of three parts: 1) Data preparation, 2) Supervised Machine Learning, and 3) Unsupervised Machine Learning 
+
 # Data Preparation
 
 ## Supervised Machine Learning
