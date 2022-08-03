@@ -19,7 +19,7 @@ my_dataset = pd.DataFrame(iris.data, columns=cols)
 my_dataset['Class'] = iris.target
 
 #
-# Conver numeric value to string in class
+# Convert numeric value to string in class
 #
 my_dataset['Class'].replace([0,1,2],['Setosa','Versicolor','Virginica'], inplace=True)
 
@@ -51,6 +51,11 @@ print(my_dataset.describe())
 # Draw scatter plot
 #
 sns.pairplot(my_dataset,hue='Class',markers='+')
+
+#
+# Save plot as PNG file
+#
+plt.savefig('Iris_scatter_plot.png')
 
 #
 #
