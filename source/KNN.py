@@ -1,14 +1,26 @@
 #
-# KNN classifier
+# K-Nearest Neibhgor Classifier
 #
+
 from sklearn import datasets
 from sklearn import metrics
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split
 import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
+
+#
+# To generate consistant experimental results
+#
+np.random.seed(0)
+
+###############################################################################
+#
+# 1. Data preparation
+#
+###############################################################################
 
 #
 # Read dataset from library
@@ -42,7 +54,7 @@ print('\nCount by class\n')
 print(my_dataset['Class'].value_counts())
 
 #
-#
+# Descriptive statistics
 #
 print('\nDescriptive statistics\n')
 print(my_dataset.describe())
@@ -68,11 +80,18 @@ y = my_dataset['Class']
 #
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2, random_state=5)
 print(f'\nTrain set : {X_train.shape}, Test set : {y_train.shape}\n')
+
 #
 # Set 5 neighours
 #
-k = 5
-knn = KNeighborsClassifier(n_neighbors=k)
+k = 10
+knn = KNeighborsClassifier(n_neighbors = k)
+
+###############################################################################
+#
+# 2. Training
+#
+###############################################################################
 
 #
 # Train with training set
@@ -80,11 +99,23 @@ knn = KNeighborsClassifier(n_neighbors=k)
 print(f'\nTraining K={k}...\n')
 knn.fit(X_train, y_train)
 
+###############################################################################
+#
+# 3. Estimating
+#
+###############################################################################
+
 #
 # Predict with test set
 #
 print('\nPredicting...\n')
 y_pred = knn.predict(X_test)
+
+###############################################################################
+#
+# 4. Evaluating
+#
+###############################################################################
 
 #
 # Check whether prediction is correct
@@ -98,4 +129,4 @@ print(results['Result'].value_counts())
 #
 # Check accuracy
 #
-print(f'\nAccuracy : {metrics.accuracy_score(y_test,y_pred)}\n')
+print(f'\nAccuracy : {metrics.accuracy_score(y_test,y_pred)}')

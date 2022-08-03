@@ -1,8 +1,8 @@
+
 #
-# K Means Clustering
+# Title
 #
 
-from sklearn.cluster import KMeans
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import numpy as np
 from sklearn import metrics
@@ -18,24 +18,12 @@ np.random.seed(0)
 # 1. Data preparation
 #
 ###############################################################################
-X = np.array([[1, 2], [1, 4], [1, 0],
-              [10, 2], [10, 4], [10, 0]])
 
-plt.title('Data')
-plt.scatter(x=X[:,0], y=X[:,1])
-plt.show()
-
-print(X)
 ###############################################################################
 #
 # 2. Training
 #
 ###############################################################################
-cluster_num = 2
-clf = KMeans(n_clusters = cluster_num, random_state=0)
-clf.fit(X)
-
-print(clf.labels_)
 
 ###############################################################################
 #
@@ -49,4 +37,12 @@ print(clf.labels_)
 #
 ###############################################################################
 
-print(clf.cluster_centers_)
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels = clf.classes_)
+disp.plot()
+plt.show()
+
+print(f'\nAccuracy  : {metrics.accuracy_score(y_test,y_pred)}')
+print(f'Precision : {metrics.precision_score(y_test, y_pred)}')
+print(f'Recall    : {metrics.recall_score(y_test, y_pred)}')
