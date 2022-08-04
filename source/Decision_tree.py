@@ -17,6 +17,12 @@ import numpy as np
 #
 np.random.seed(0)
 
+###############################################################################
+#
+# 1. Data preparation
+#
+###############################################################################
+
 #
 # Read dataset from library
 #
@@ -76,6 +82,12 @@ y = my_dataset['Class']
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2, random_state=5)
 print(f'\nTrain set : {X_train.shape}, Test set : {y_train.shape}\n')
 
+###############################################################################
+#
+# 2. Training
+#
+###############################################################################
+
 #
 # Decision Tree Classifier 
 #
@@ -87,11 +99,23 @@ clf = DecisionTreeClassifier()
 print(f'\nTraining...\n')
 clf.fit(X_train, y_train)
 
+###############################################################################
+#
+# 3. Estimating
+#
+###############################################################################
+
 #
 # Predict with test set
 #
 print('\nPredicting...\n')
 y_pred = clf.predict(X_test)
+
+###############################################################################
+#
+# 4. Evaluating
+#
+###############################################################################
 
 #
 # Check whether prediction is correct

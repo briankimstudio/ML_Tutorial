@@ -75,6 +75,7 @@ y_pred = clf.predict(X_test)
 # 4. Evaluating
 #
 ###############################################################################
+
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=clf.classes_)

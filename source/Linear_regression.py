@@ -40,6 +40,7 @@ print('\nData value\n')
 print(my_dataset.head())
 
 clf = LinearRegression()
+
 ###############################################################################
 #
 # 2. Training
@@ -63,6 +64,7 @@ print('\nPredicting...\n')
 pred = clf.predict(np.array([[3, 5]]))
 
 print(pred)
+
 ###############################################################################
 #
 # 4. Evaluating

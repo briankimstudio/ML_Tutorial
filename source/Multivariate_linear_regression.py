@@ -65,6 +65,7 @@ y = my_dataset['charges']
 X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=True, train_size=0.3)
 
 clf = LinearRegression()
+
 ###############################################################################
 #
 # 2. Training
@@ -90,11 +91,13 @@ y_pred = clf.predict(X_test)
 
 
 # print(y_pred)
+
 ###############################################################################
 #
 # 4. Evaluating
 #
 ###############################################################################
+
 print('\nEvaluating...\n')
 r2 = r2_score(y_test, y_pred)
 rmse = mean_squared_error(y_test, y_pred, squared=False)

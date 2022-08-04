@@ -63,6 +63,7 @@ y = non_smokers['charges']
 X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=True, train_size=0.3)
 
 clf = LinearRegression()
+
 ###############################################################################
 #
 # 2. Training
@@ -93,6 +94,7 @@ print('The r2 is: ', r2)
 print('The rmse is: ', rmse)
 
 print(y_pred)
+
 ###############################################################################
 #
 # 4. Evaluating
