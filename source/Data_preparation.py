@@ -1,14 +1,13 @@
 #
-# KNN classifier
+# Data Preparation
 #
 from sklearn import datasets
-from sklearn import metrics
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.decomposition import PCA
-from sklearn.model_selection import train_test_split
-import seaborn as sns
 import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
+from sklearn import metrics
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
 
 #
 # Read dataset from library
