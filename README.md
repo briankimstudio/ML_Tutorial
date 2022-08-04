@@ -26,7 +26,7 @@ Unlike statistical analysis, the purpose of machine learning is to predict value
 
 This tutorial consists of three parts: 1) Data preparation, 2) Supervised Machine Learning, and 3) Unsupervised Machine Learning. `scikit-learn` is used for example source codes in this tutorial for simplicity and clarity. 
 
-# Data Preparation
+## Data Preparation
 
 Data preparation covers folowing steps.
 
@@ -62,3 +62,26 @@ Unsupervised machine learning requires input data with features but it has no la
 Topic modeling is a method to identify prevalent topics from dataset of natural language such as new papers, online reviews, or scholary articles.
 
 ### K means clustering
+
+## Evaluation
+
+### Confusion matrix
+
+|   | Predicted  ||
+|---|---|---------|
+| Actual | TP | FP |
+| Actual       | TN | FN |
+
+
+- Accuracy = TP+TN / TP+TN+FP+FN
+- Precision = TP / TP+FP
+- Recall = TP / TP+FN
+
+
+### Receiver Operating Charasteristic(ROC) curve
+
+In this curve, x axis indicates False Positive Rate(FPR) and y axis indicates True Positive Rate(TPR)
+
+### Area Under the ROC Curve(AUC)
+
+AUC is a frequently used indicator showing the performance of the model. It ranges from 0 to 1 and higher is better. 
