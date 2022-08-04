@@ -37,7 +37,7 @@ Data preparation covers folowing steps.
  
 ## Supervised Machine Learning
 
-Supervised machine learning requires input data with features and label. Typical applications of supervised machine learning are classification and prediction. 
+Supervised machine learning requires input data with features and label. Typical applications are classification(identifying category such as cat or dog) and regression(predicting continuous value such as house price). 
 
 ### Linear Regression
 
@@ -81,6 +81,9 @@ Topic modeling is a method to identify prevalent topics from dataset of natural 
 ### Receiver Operating Charasteristic(ROC) curve
 
 In this curve, x axis indicates False Positive Rate(FPR) and y axis indicates True Positive Rate(TPR)
+
+- TPR(recall) = TP/TP+FN
+- FPR = FP/FP+TN
 
 ### Area Under the ROC Curve(AUC)
 
