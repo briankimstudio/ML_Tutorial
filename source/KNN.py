@@ -1,5 +1,5 @@
 #
-# K-Nearest Neibhgor Classifier
+# K-Nearest Neighbor Classifier
 #
 
 from sklearn import datasets

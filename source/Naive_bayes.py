@@ -1,6 +1,6 @@
 
 #
-# Supervised Machine Learning Template
+# Naive Bayes Classifier
 #
 
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay

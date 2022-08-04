@@ -1,6 +1,6 @@
 
 #
-# Title
+# Unsupervised Machine Learning Template
 #
 
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
@@ -25,15 +25,18 @@ print('\nData preparation...\n')
 # 2. Training
 #
 ###############################################################################
+print('\nTraining Model...\n')
 
 ###############################################################################
 #
 # 3. Estimating
 #
 ###############################################################################
+print('\Estimating Model...\n')
 
 ###############################################################################
 #
 # 4. Evaluating
 #
 ###############################################################################
+print('\Evaluating Results...\n')

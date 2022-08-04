@@ -1,6 +1,6 @@
 
 #
-# Linear Regression Classifier
+# Multivariate Linear Regression Classifier
 #
 
 from sklearn.metrics import mean_squared_error, r2_score

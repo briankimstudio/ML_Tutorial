@@ -1,6 +1,6 @@
 
 #
-# Supervised Machine Learning Template
+# Random Forest Classifier
 #
 
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
@@ -39,7 +39,6 @@ print('\nPredicting...\n')
 # 4. Evaluating
 #
 ###############################################################################
-print('\Evaluating...\n')
 
 cm = confusion_matrix(y_test, y_pred)
 print(cm)

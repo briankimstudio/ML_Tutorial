@@ -1,5 +1,5 @@
 #
-# Decision Tree classifier
+# Decision Tree Classifier
 #
 
 from sklearn import datasets
