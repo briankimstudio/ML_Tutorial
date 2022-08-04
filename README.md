@@ -24,11 +24,20 @@ Unlike statistical analysis, the purpose of machine learning is to predict value
 | Logistic regression | Linear Regression | K-means |
 | Support Vector Machine | KNN | Topic Modeling |
 
-This tutorial consists of three parts: 1) Data preparation, 2) Supervised Machine Learning, and 3) Unsupervised Machine Learning 
+This tutorial consists of three parts: 1) Data preparation, 2) Supervised Machine Learning, and 3) Unsupervised Machine Learning. `scikit-learn` is used for example source codes in this tutorial for simplicity and clarity. 
 
 # Data Preparation
 
+Data preparation covers folowing steps.
+
+- Reading data
+- Inspecting dimension
+- Inspecting data type of columns
+- Visualizing correlation among columns
+ 
 ## Supervised Machine Learning
+
+Supervised machine learning requires input data with features and label. Typical applications of supervised machine learning are classification and prediction. 
 
 ### Linear Regression
 
@@ -38,11 +47,15 @@ However, in the area of machine learning, the important part just starts from he
 
 ### Logistic Regression
 
+Logistic regression is a binary classification.
+
 ### K-Nearest Negihbors (KNN)
 
 ### Support Vector Machine (SVM)
 
 ## Unsupervised Machine Learning
+
+Unsupervised machine learning requires input data with features but it has no label. Therefore, typical application of unsupervised machine learning is clustering.
 
 ### Topic Modeling
 
