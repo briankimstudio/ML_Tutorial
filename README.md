@@ -67,8 +67,8 @@ Topic modeling is a method to identify prevalent topics from dataset of natural 
 
 ### Confusion matrix
 
-|   | Predicted  ||
-|---|---|---------|
+|   | Predicted  |Predicted|
+|---|:---:|:---:|
 | Actual | TP | FP |
 | Actual       | TN | FN |
 
