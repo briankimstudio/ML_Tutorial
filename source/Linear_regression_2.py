@@ -72,11 +72,9 @@ clf = LinearRegression()
 
 print('\nTraining...\n')
 clf.fit(X_train, y_train)
-print(clf.score(X_train, y_train))
 
-print('\nCoefficient')
-print(clf.coef_)
-
+print(f'Score       : {clf.score(X_train, y_train)}, R2 {r2_score(X_train,y_train)}')
+print(f'Coefficient : {clf.coef_}')
 
 ###############################################################################
 #
@@ -87,19 +85,19 @@ print(clf.coef_)
 print('\nPredicting...\n')
 y_pred = clf.predict(X_test)
 
-r2 = r2_score(y_test, y_pred)
-rmse = mean_squared_error(y_test, y_pred, squared=False)
-
-print('The r2 is: ', r2)
-print('The rmse is: ', rmse)
-
-print(y_pred)
-
 ###############################################################################
 #
 # 4. Evaluating
 #
 ###############################################################################
+
+r2   = r2_score(y_test, y_pred)
+rmse = mean_squared_error(y_test, y_pred, squared=False)
+
+print(f'R2   : {r2}')
+print(f'RMSE : {rmse}')
+
+# print(y_pred)
 
 # cm = confusion_matrix(y_test, y_pred)
 # print(cm)

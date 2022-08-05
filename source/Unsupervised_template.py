@@ -20,6 +20,12 @@ np.random.seed(0)
 ###############################################################################
 print('\nData preparation...\n')
 
+print(f'\nData structure\n')
+print(my_dataset.info())
+
+print(f'\nData preview\n')
+print(my_dataset.head())
+
 ###############################################################################
 #
 # 2. Training

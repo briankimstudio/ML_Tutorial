@@ -31,7 +31,7 @@ This tutorial consists of three parts: 1) Data preparation, 2) Supervised Machin
 Data preparation covers folowing steps.
 
 - Reading data
-- Inspecting dimension
+- Inspecting dimension (rows, columns)
 - Inspecting data type of columns
 - Visualizing correlation among columns
  
