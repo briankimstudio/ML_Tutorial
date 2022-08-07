@@ -67,23 +67,22 @@ Topic modeling is a method to identify prevalent topics from dataset of natural 
 
 ### Confusion matrix
 
-|   | Predicted  |Predicted|
+|   | Predicted Positive |Predicted Negative|
 |---|:---:|:---:|
-| Actual | TP | FP |
-| Actual       | TN | FN |
+| Actual Positive | TP | FN |
+| Actual Negative | FP | TN |
 
 
-- Accuracy = TP+TN / TP+TN+FP+FN
-- Precision = TP / TP+FP
-- Recall = TP / TP+FN
-
+- Accuracy = (TP+TN) / (TP+TN+FP+FN)
+- Precision = TP / (TP+FP)
+- Recall = TP / (TP+FN) 
 
 ### Receiver Operating Charasteristic(ROC) curve
 
 In this curve, x axis indicates False Positive Rate(FPR) and y axis indicates True Positive Rate(TPR)
 
-- TPR(recall) = TP/TP+FN
-- FPR = FP/FP+TN
+- TPR(recall) = TP / (TP+FN)
+- FPR = FP / (FP+TN)
 
 ### Area Under the ROC Curve(AUC)
 
