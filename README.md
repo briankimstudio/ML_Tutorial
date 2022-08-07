@@ -86,6 +86,8 @@ For example, among values predicted as positive, 104 are correct(TP) but 2 are w
 
 In this curve, x axis indicates False Positive Rate(FPR) and y axis indicates True Positive Rate(TPR)
 
+![confision matrix](/images/AUC.png)
+
 - TPR(recall) = TP / (TP+FN)
 - FPR = FP / (FP+TN)
 

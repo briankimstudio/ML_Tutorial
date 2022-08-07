@@ -82,6 +82,9 @@ disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=clf.classes_)
 disp.plot()
 plt.show()
 
+metrics.plot_roc_curve(clf, X_test, y_test) 
+plt.show()
+
 print(f'\nAccuracy  : {metrics.accuracy_score(y_test,y_pred)}')
 print(f'Precision : {metrics.precision_score(y_test, y_pred)}')
 print(f'Recall    : {metrics.recall_score(y_test, y_pred)}')
