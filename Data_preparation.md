@@ -2,10 +2,10 @@
 
 Data preparation covers folowing steps.
 
-- Reading data
-- Inspecting dimension(rows, columns) and data type
-- Inspecting value of the dataset
-- Visualizing correlation among columns
+1. Reading data
+2. Inspecting dimension(rows, columns) and data type
+3. Inspecting value of the dataset
+4. Visualizing correlation among columns
 
 The raw data could be in any form. For machine learning, however, features and class need to be in a matrix format.
 Typically, during data preparation step, `numpy` and `pandas` packages are heavily used to transform raw data into matrix or table format.
