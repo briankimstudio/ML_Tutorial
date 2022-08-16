@@ -1,18 +1,18 @@
 ## Dataset
 
-The `scikit-learn` package provide various datasets for beginner to practice machine learning.
+The `scikit-learn` package provides various datasets for beginner to practice machine learning.
 
-In particular, we are going to use following datasets.
+In particular, we are going to use following datasets for demonstration purpose. 
 
-| dataset | purpose |
-| --- | --- |
-| breast cancer | binary classification |
-| iris | multiclass classification |
-| diabetes | regression |
+| dataset | purpose | samples | features | class |
+| --- | --- | ---: | ---: | :---: |
+| `breast cancer` | binary classification | 569 | 30 | 0/1 |
+| `iris` | multiclass classification | 150 | 4 | 0/1/2 |
+| `diabetes` | regression | 442 | 10 | 25~346 |
 
 For full list of datasets, please, refer to the documentation of [toy dataset](https://scikit-learn.org/stable/datasets/toy_dataset.html).
 
-1. Breast cancer - Binary classification
+### 1. Breast cancer - Binary classification
 
 - Samples : 569
 - Features : 30
@@ -59,7 +59,7 @@ dtypes: float64(30), int64(1)
 memory usage: 137.9 KB
 ```
 
-2. Iris - Multiclass classification
+### 2. Iris - Multiclass classification
 
 - Samples : 150
 - Features : 4
@@ -80,7 +80,7 @@ dtypes: float64(4), int64(1)
 memory usage: 6.0 KB
 ```
 
-3. Diabetes - Regression
+### 3. Diabetes - Regression
 
 - Samples : 442
 - Features : 10
