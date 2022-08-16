@@ -67,7 +67,7 @@ sns.pairplot(my_dataset,hue='Class',markers='+')
 #
 # Save plot as PNG file
 #
-plt.savefig('Iris_scatter_plot.png')
+# plt.savefig('Iris_scatter_plot.png')
 
 #
 #
