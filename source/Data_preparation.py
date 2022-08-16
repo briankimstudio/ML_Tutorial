@@ -13,7 +13,6 @@ from sklearn.neighbors import KNeighborsClassifier
 # Read dataset from library
 #
 raw_dataset = datasets.load_iris()
-# cols = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width'] 
 
 # Create pandas dataframe
 my_dataset = pd.DataFrame(raw_dataset.data, columns=raw_dataset.feature_names)
