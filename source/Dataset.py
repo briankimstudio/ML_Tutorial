@@ -53,11 +53,9 @@ raw_dataset = datasets.load_diabetes()
 # Create pandas dataframe
 my_dataset = pd.DataFrame(raw_dataset.data, columns=raw_dataset.feature_names)
 my_dataset['class'] = raw_dataset.target
-print(raw_dataset.target_names)
 print(my_dataset['class'].value_counts())
 #
 # Check data structure, # of rows, # of columns
 #
 print('\nData structure\n')
 my_dataset.info()
-
