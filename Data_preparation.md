@@ -64,6 +64,9 @@ print(my_dataset.head())
 3                4.6               3.1                1.5               0.2      0
 4                5.0               3.6                1.4               0.2      0
 ```
+
+### Data conversion
+
 All features here are numerical data, but, the class is a categorical data. Thus, we convert class from numeric to name of species to understand it easily.
 
 ```
@@ -81,6 +84,8 @@ print(my_dataset.head())
 3                4.6               3.1                1.5               0.2  setosa
 4                5.0               3.6                1.4               0.2  setosa
 ```
+
+### Balance check
 
 For classification problem in machine learning, the level of balance in class is crutial to the performance of prediction. Thus, we must always inspect it as early as possible.
 
