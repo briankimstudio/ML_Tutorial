@@ -17,7 +17,7 @@ For example, among values predicted as positive, 104 are correct(TP), but two ar
 - Precision = TP / (TP+FP)
 - Recall = TP / (TP+FN) 
 
-In `sklearn`, use these functions to calculate accuracy, precision, and recall.
+In `scikit-learn`, use these functions to calculate accuracy, precision, and recall.
 
 ```
 print(f'Accuracy  : {metrics.accuracy_score(y_test, y_pred)}')
