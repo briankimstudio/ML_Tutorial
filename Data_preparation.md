@@ -93,7 +93,7 @@ For classification problem in machine learning, the level of balance in class is
 print(my_dataset['class'].value_counts())
 ```
 
-In this dataset, there are three classes and each of them are exactly 50 samples. It indicates this dataseet is perfectly balanced. If not, we need to consider extra steps to minigate the negative effect caused by imbalanced dataset.
+In this dataset, there are three classes and each of them are exactly 50 samples. It indicates this dataset is perfectly balanced. 
 
 ```
 Count by class
@@ -103,6 +103,8 @@ versicolor    50
 virginica     50
 Name: class, dtype: int64
 ```
+
+If not, we need to consider extra steps to mitigate the negative effect caused by imbalanced dataset.
 
 ### 4. Visualizing correlation among columns
 
