@@ -1,3 +1,5 @@
+## Data preparation
+
 Data preparation covers folowing steps.
 
 - Reading data
@@ -9,6 +11,8 @@ The raw data could be in any form. For machine learning, however, features and c
 Typically, during data preparation step, `numpy` and `pandas` packages are heavily used to transform raw data into matrix or table format.
 While `numpy` is convenient for manuplicating array type of data, `pandas` is useful to manage data of table format using `DataFrame` type.
 
+### Reading raw data
+
 In this example, we first read raw data using `sclearn`'s builtin dataset. Then, convert it to `DataFrame` format with features(`raw_dataset.data`) and class(`raw_dataset.target`)
 
 ```
@@ -19,6 +23,8 @@ raw_dataset = datasets.load_iris()
 my_dataset = pd.DataFrame(raw_dataset.data, columns=raw_dataset.feature_names)
 my_dataset['class'] = raw_dataset.target
 ```
+
+### Inspecting dimension(# of rows, #of columns)
 
 The first step in data prepatation is to figure out how many samples and how many features are there in the dataset.
 
@@ -89,3 +95,12 @@ virginica     50
 Name: class, dtype: int64
 ```
 
+### Visualizing correlation among columns
+
+For visualizing correlation among features and class, we use `pairplot` function from `seabone` package.
+
+```
+sns.pairplot(my_dataset,hue='class',markers='+')
+```
+
+![corrlation](images/correlation.png)
