@@ -51,7 +51,7 @@ print(f'Train :{X_train.shape}, Test :{X_test.shape}')
 #
 
 kernel_type = 'linear'
-clf = svm.SVC(kernel = kernel_type)
+clf = svm.SVC(kernel = kernel_type, probability=True, random_state=0)
 
 ###############################################################################
 #
@@ -60,6 +60,7 @@ clf = svm.SVC(kernel = kernel_type)
 ###############################################################################
 
 clf.fit(X_train, y_train)
+print(f'Training score : {clf.score(X_train, y_train)}')
 
 ###############################################################################
 #
@@ -71,6 +72,7 @@ clf.fit(X_train, y_train)
 # Predict with test set
 #
 y_pred = clf.predict(X_test)
+y_prob = clf.predict_proba(X_test)
 
 ###############################################################################
 #
@@ -88,6 +90,7 @@ metrics.plot_roc_curve(clf, X_test, y_test)
 plt.plot([0, 1], [0, 1], color="navy", lw=1, linestyle="--")
 plt.show()
 
-print(f'\nAccuracy  : {metrics.accuracy_score(y_test,y_pred)}')
+print(f'AUC score : {metrics.roc_auc_score(y_test,y_prob[:,1])}')
+print(f'Accuracy  : {metrics.accuracy_score(y_test,y_pred)}')
 print(f'Precision : {metrics.precision_score(y_test, y_pred)}')
 print(f'Recall    : {metrics.recall_score(y_test, y_pred)}')
