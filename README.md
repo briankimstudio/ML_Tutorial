@@ -23,9 +23,9 @@ Unlike statistical analysis, the purpose of machine learning is to predict a val
 
 The purpose of this model is to classify binary values(cats or dogs) in the output. Thus, it is called a 'binary classification'. If there are more than two types of outputs, then it is called 'multiclass classification'. The second type of problem is 'regression'. In the case of house price estimation, it is to predict a continuous number, which is called 'regression'. The third type of problem is 'clustering'. Let's assume that there are lots of data and we would like to cluster them into multiple groups with similar characteristics. From machine learning's perspective, classification and regression belong to [supervised learning](Supervised.md), whereas clustering belongs to [unsupervised learning](Unsupervised.md).
 
-| | Binary Classification | Multiclass Classification | Regression |Clustering |
+|  | Binary Classification | Multiclass Classification | Regression |Clustering |
 | --- | :---------------: | :-------------------: | :---: | :--------: |
-| | Logistic regression, Support Vector Machine | KNN | Regression | K-means, Topic Modeling |
+| Methods | Logistic regression, Support Vector Machine | KNN | Regression | K-means, Topic Modeling |
 | Dataset | `breast cancer` | `iris` | `diabetes` | TBD | 
 
 This tutorial consists of three parts: 1) Data Preparation, 2) Supervised Machine Learning, 3) Unsupervised Machine Learning, and 4) Evaluation of Machine Learning Model. `scikit-learn` is used for example source codes in this tutorial for simplicity and clarity. 
