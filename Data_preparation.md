@@ -3,8 +3,8 @@
 Data preparation covers folowing steps.
 
 - Reading data
-- Inspecting dimension (rows, columns)
-- Inspecting data type of columns
+- Inspecting dimension(rows, columns) and data type
+- Inspecting value of the dataset
 - Visualizing correlation among columns
 
 The raw data could be in any form. For machine learning, however, features and class need to be in a matrix format.
@@ -48,6 +48,7 @@ Data columns (total 5 columns):
 dtypes: float64(4), object(1)
 memory usage: 6.0+ KB
 ```
+### Inspecting value of the dataset
 
 After converting, we can print data of first 5 rows using `head` function. There are 5 columns in this dataset. First four of them are features, and the last one represents class.
 
@@ -100,6 +101,7 @@ Name: class, dtype: int64
 For visualizing correlation among features and class, we use `pairplot` function from `seabone` package.
 
 ```
+import seaborn as sns
 sns.pairplot(my_dataset,hue='class',markers='+')
 ```
 
