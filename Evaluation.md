@@ -2,9 +2,9 @@
 
 ### Confusion matrix
 
-Confusion matrix shows how many precitions are correct or wrong. Typically, x axis is predicted label and y axis is true label(0 for negative, 1 for positive). 
+Confusion matrix shows how many predictions are correct or wrong. Typically, x axis is predicted label and y axis is true label(0 for negative, 1 for positive). 
 
-For example, among values predicted as positive, 104 are correct(TP) but 2 are wrong(FP). Likewise, among values predicted as negative, 61 are correct(TN) and 2 are wrong(FN)
+For example, among values predicted as positive, 104 are correct(TP), but two are wrong(FP). Likewise, among values predicted as negative, 61 are correct(TN), but two are wrong(FN)
 
 ![confision matrix](/images/Confusion_matrix.png)
 
@@ -17,7 +17,7 @@ For example, among values predicted as positive, 104 are correct(TP) but 2 are w
 - Precision = TP / (TP+FP)
 - Recall = TP / (TP+FN) 
 
-In `sklearn`, use these functions to calculate various metrics.
+In `sklearn`, use these functions to calculate accuracy, precision, and recall.
 
 ```
 print(f'Accuracy  : {metrics.accuracy_score(y_test, y_pred)}')

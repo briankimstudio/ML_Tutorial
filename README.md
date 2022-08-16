@@ -26,14 +26,7 @@ Unlike statistical analysis, the purpose of machine learning is to predict value
 
 This tutorial consists of three parts: 1) Data preparation, 2) Supervised Machine Learning, and 3) Unsupervised Machine Learning. `scikit-learn` is used for example source codes in this tutorial for simplicity and clarity. 
 
-## Data Preparation
-
-Data preparation covers folowing steps.
-
-- Reading data
-- Inspecting dimension (rows, columns)
-- Inspecting data type of columns
-- Visualizing correlation among columns
+[Data Preparation](Data_preparation.md)
  
 ## Supervised Machine Learning
 
