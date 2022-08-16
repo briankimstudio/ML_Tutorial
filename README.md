@@ -25,7 +25,7 @@ The purpose of this model is to classify binary values(cats or dogs) in the outp
 
 | | Binary Classification | Multiclass Classification | Regression |Clustering |
 | --- | :---------------: | :-------------------: | :---: | :--------: |
-| | Logistic regression, Support Vector Machine | KNN | Regression | K-means, Topic Modeling |
+| | Logistic regression  Support Vector Machine | KNN | Regression | K-means  Topic Modeling |
 | Dataset | `breast cancer` | `iris` | `diabetes` | TBD | 
 
 This tutorial consists of three parts: 1) Data Preparation, 2) Supervised Machine Learning, 3) Unsupervised Machine Learning, and 4) Evaluation of Machine Learning Model. `scikit-learn` is used for example source codes in this tutorial for simplicity and clarity. 
