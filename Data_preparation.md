@@ -6,9 +6,7 @@ Data preparation covers folowing steps.
 - Visualizing correlation among columns
 
 The raw data could be in any form. For machine learning, however, features and class need to be in a matrix format.
-
 Typically, during data preparation step, `numpy` and `pandas` packages are heavily used to transform raw data into matrix or table format.
-
 While `numpy` is convenient for manuplicating array type of data, `pandas` is useful to manage data of table format using `DataFrame` type.
 
 In this example, we first read raw data using `sclearn`'s builtin dataset. Then, convert it to `DataFrame` format with features(`raw_dataset.data`) and class(`raw_dataset.target`)
