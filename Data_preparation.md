@@ -16,10 +16,13 @@ While `numpy` is convenient for manuplicating array type of data, `pandas` is us
 In this example, we first read raw data using `sclearn`'s builtin dataset. Then, convert it to `DataFrame` format with features(`raw_dataset.data`) and class(`raw_dataset.target`)
 
 ```
+from sklearn import datasets
+import pandas as pd
+
 # Read raw dataset
 raw_dataset = datasets.load_iris()
 
-# Construct dataset using DataFrame format
+# Construct dataset as DataFrame format
 my_dataset = pd.DataFrame(raw_dataset.data, columns=raw_dataset.feature_names)
 my_dataset['class'] = raw_dataset.target
 ```
