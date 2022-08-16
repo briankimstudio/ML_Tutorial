@@ -1,6 +1,10 @@
 ## Evaluation of Machine Learning Model
 
-### Confusion matrix
+1. Confusion matrix
+2. Receiver Operating Charasteristic(ROC) curve
+3. Area Under the ROC Curve(AUC)
+ 
+### 1. Confusion matrix
 
 Confusion matrix shows how many predictions are correct or wrong. Typically, x axis is predicted label and y axis is true label(0 for negative, 1 for positive). 
 
@@ -25,7 +29,7 @@ print(f'Precision : {metrics.precision_score(y_test, y_pred)}')
 print(f'Recall    : {metrics.recall_score(y_test, y_pred)}')
 ```
 
-### Receiver Operating Charasteristic(ROC) curve
+### 2. Receiver Operating Charasteristic(ROC) curve
 
 In this curve, x axis indicates False Positive Rate(FPR) and y axis indicates True Positive Rate(TPR)
 
@@ -34,6 +38,6 @@ In this curve, x axis indicates False Positive Rate(FPR) and y axis indicates Tr
 - TPR(recall) = TP / (TP+FN)
 - FPR = FP / (FP+TN)
 
-### Area Under the ROC Curve(AUC)
+### 3. Area Under the ROC Curve(AUC)
 
 AUC is a frequently used indicator showing the performance of the model. It ranges from 0 to 1 and higher is better. 
