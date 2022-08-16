@@ -17,11 +17,11 @@ By comparing statistical analysis and machine learning, we can have a clear view
 
 __Purpose of Machine Learning__
 
-Unlike statistical analysis, the purpose of machine learning is to predict a value that is unknown at the time of prediction. The first type of problem is classification. Let's assume that we have a task that classifes cats and dogs, and we have a machine learning model called 'cat detector'. Based on the picture, it predicts whether the image is a cat or a dog just like in the figure below.
+Unlike statistical analysis, the purpose of machine learning is to predict a value that is unknown at the time of prediction. The first type of problem is classification. Let's assume that we have a task that classifes cats and dogs, and we have a machine learning model called 'cat detector'. After inspecting an image, then it predicts whether the image is a cat or a dog just like in the figure below.
 
 ![overview](images/overview.png)
 
-The purpose of this model is to classify binary values in the output. Thus, it is called a 'binary classification'. If there are more than two types of outputs, then it is called 'multiclass classification'. The second type of problem is 'regression'. In the case of house price estimation, it is to predict a continuous number, which is called 'regression'. The third type of problem is 'clustering'. Let's assume that there are lots of data and we would like to cluster them into multiple groups with similar characteristics. From machine learning's perspective, classification and regression belong to [supervised learning](Supervised.md), whereas clustering belongs to [unsupervised learning](Unsupervised.md).
+The purpose of this model is to classify binary values(cats or dogs) in the output. Thus, it is called a 'binary classification'. If there are more than two types of outputs, then it is called 'multiclass classification'. The second type of problem is 'regression'. In the case of house price estimation, it is to predict a continuous number, which is called 'regression'. The third type of problem is 'clustering'. Let's assume that there are lots of data and we would like to cluster them into multiple groups with similar characteristics. From machine learning's perspective, classification and regression belong to [supervised learning](Supervised.md), whereas clustering belongs to [unsupervised learning](Unsupervised.md).
 
 | Binary Prediction | Multiclass Prediction | Clustering |
 | :---------------: | :-------------------: | :--------: |
