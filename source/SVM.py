@@ -38,17 +38,18 @@ cancer.data.shape
 print(cancer.data[0:5])
 
 # print the cancer labels (0:malignant, 1:benign)
-print(cancer.target)
+print(cancer.target[0:5])
 
 #
 # Split dataset into traning(X_train, y_train) set and test set(X_test, y_test).
 #
-X_train, X_test, y_train, y_test = train_test_split(cancer.data, cancer.target, test_size=0.3,random_state=109)
-
+X_train, X_test, y_train, y_test = train_test_split(cancer.data, cancer.target, test_size=0.3, random_state=109)
 print(f'Train :{X_train.shape}, Test :{X_test.shape}')
+
 #
 # 
 #
+
 kernel_type = 'linear'
 clf = svm.SVC(kernel = kernel_type)
 
