@@ -36,3 +36,4 @@ This tutorial consists of three parts: 1) Data Preparation, 2) Supervised Machin
 3. [Supervised Machine Learning](Supervised.md)
 4. [Unsupervised Machine Learning](Unsupervised.md)
 5. [Evaluation of Machine Learning Model](Evaluation.md)
+6. [Source code template](Source_code.md)
