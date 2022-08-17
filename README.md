@@ -10,10 +10,12 @@ By comparing statistical analysis and machine learning, we can have a clear view
 
 |         | Statistical Analysis | Machine Learning |
 |--------:| :----------------: | :--------------: |
-| User    | Social Scientist | Computer Scientist |
-| Purpose | Hypothesis testing | Predicting       |
-| Results | Coefficient, p-value | Trained model |
-| Tools   | R, Python | Python, R |
+| Major User    | Social scientist | Computer scientist |
+| Purpose | Testing hypothesis | Predicting value       |
+| Output | Coefficients | Trained model, predictions |
+| Index | p-value, SRMR, GFI,NFI,CFI, RMSEA, ... | AUC, accuracy, precision, recall, ... |
+| Platform   | R, jamovi, JASP, SPSS, ... | Python, R, ... |
+| Package | ... | sciket learn, PyTorch, Tensorflow, Keras, ... |
 
 __Purpose of Machine Learning__
 
