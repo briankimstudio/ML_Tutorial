@@ -1,4 +1,3 @@
-
 #
 # Supervised Machine Learning Template
 #
