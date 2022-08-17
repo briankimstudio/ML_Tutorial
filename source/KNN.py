@@ -1,15 +1,16 @@
 #
-# K-Nearest Neighbor Classifier
+# K-Nearest Neighbor Classifier - Multiclass Classification
 #
 
 from sklearn import datasets
 from sklearn import metrics
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
-import seaborn as sns
-import pandas as pd
-import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 #
 # To generate consistant experimental results
@@ -78,13 +79,13 @@ y = my_dataset['class']
 # Split dataset into traning(X_train, y_train) set and test set(X_test, y_test).
 #
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2, random_state=5)
-print(f'\nTrain set : {X_train.shape}, Test set : {y_train.shape}\n')
+print(f'\nTraining set : {X_train.shape}, Test set : {y_train.shape}\n')
 
 #
-# Set 10 neighours
+# Set hyperparameter
 #
 k = 5
-knn = KNeighborsClassifier(n_neighbors = k)
+clf = KNeighborsClassifier(n_neighbors = k)
 
 ###############################################################################
 #
@@ -96,7 +97,8 @@ knn = KNeighborsClassifier(n_neighbors = k)
 # Train with training set
 #
 print(f'\nTraining K={k}...\n')
-knn.fit(X_train, y_train)
+clf.fit(X_train, y_train)
+print(f'Training score : {clf.score(X_train, y_train)}')
 
 ###############################################################################
 #
@@ -108,14 +110,25 @@ knn.fit(X_train, y_train)
 # Predict with test set
 #
 print('\nPredicting...\n')
-y_pred = knn.predict(X_test)
-y_prob = knn.predict_proba(X_test)
+y_pred = clf.predict(X_test)
+y_prob = clf.predict_proba(X_test)
 
 ###############################################################################
 #
 # 4. Evaluating
 #
 ###############################################################################
+
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
+
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=clf.classes_)
+disp.plot()
+plt.show()
+
+# metrics.plot_roc_curve(clf, X_test, y_test) 
+# plt.plot([0, 1], [0, 1], color="navy", lw=1, linestyle="--")
+# plt.show()
 
 #
 # Check whether prediction is correct
@@ -127,7 +140,7 @@ print(f'\n{results}\n')
 print(results['result'].value_counts())
 
 #
-# Check accuracy
+# Check performance of the model
 #
 print(f'\nAUC score : {metrics.roc_auc_score(y_test, y_prob, multi_class="ovo")}')
 print(f'Accuracy  : {metrics.accuracy_score(y_test, y_pred)}')

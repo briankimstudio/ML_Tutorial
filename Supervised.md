@@ -111,14 +111,87 @@ Precision : [1.         1.         0.91666667]
 Recall    : [1.         0.90909091 1.        ]
 ```
 
-
+The question here is what is the best value for the `k`. How we can find it?
 
 ### 4. Support Vector Machine (SVM)
 
 Model
 ```
+#
+# Set hyperparameter
+#
+kernel_type = 'linear'
+clf = svm.SVC(kernel = kernel_type, probability=True, random_state=0)
+
+###############################################################################
+#
+# 2. Training
+#
+###############################################################################
+
+#
+# Train with training set
+#
+print(f'\nTraining...\n')
+clf.fit(X_train, y_train)
+print(f'Training score : {clf.score(X_train, y_train)}')
+
+###############################################################################
+#
+# 3. Estimating
+#
+###############################################################################
+
+#
+# Predict with test set
+#
+print('\nPredicting...\n')
+y_pred = clf.predict(X_test)
+y_prob = clf.predict_proba(X_test)
+
+###############################################################################
+#
+# 4. Evaluating
+#
+###############################################################################
+
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
+
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=clf.classes_)
+disp.plot()
+plt.show()
+
+metrics.RocCurveDisplay.from_estimator(clf, X_test, y_test)
+plt.plot([0, 1], [0, 1], color="navy", lw=1, linestyle="--")
+plt.show()
+
+#
+# Check whether prediction is correct
+#
+results = pd.DataFrame(y_test.array, columns=['truth'])
+results['predict'] = y_pred
+results['result']  = results.apply(lambda row: 'correct' if row.truth == row.predict else 'wrong', axis=1)
+print(f'\n{results}\n')
+print(results['result'].value_counts())
+
+#
+# Check performance of the model
+#
+print(f'\nAUC score : {metrics.roc_auc_score(y_test, y_prob[:,1])}')
+print(f'Accuracy  : {metrics.accuracy_score(y_test, y_pred)}')
+print(f'Precision : {metrics.precision_score(y_test, y_pred, pos_label="malignant")}')
+print(f'Recall    : {metrics.recall_score(y_test, y_pred, pos_label="malignant")}')
 ```
 
 Results
 ```
+correct    168
+wrong        3
+Name: result, dtype: int64
+
+AUC score : 0.9895678092399404
+Accuracy  : 0.9824561403508771
+Precision : 0.967741935483871
+Recall    : 0.9836065573770492
 ```
