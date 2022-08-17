@@ -6,6 +6,8 @@
  
 ### 1. Confusion matrix
 
+![evaluation](/images/evaluation.png)
+
 Confusion matrix shows how many predictions are correct or wrong. Typically, x axis is predicted label and y axis is true label(0 for negative, 1 for positive). 
 
 For example, among values predicted as positive, 104 are correct(TP), but two are wrong(FP). Likewise, among values predicted as negative, 61 are correct(TN), but two are wrong(FN)
