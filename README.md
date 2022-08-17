@@ -27,10 +27,10 @@ The purpose of this model is to classify binary values(cats or dogs) in the outp
 
 |  | Binary Classification | Multiclass Classification | Regression |Clustering |
 | --- | :---------------: | :-------------------: | :---: | :--------: |
-| Example | Predict cancer(yes or no) | Predict flowers species | Predict housr price | Separate photos by person |
+| Example | Predict cancer | Predict flowers species | Predict housr price | Separate photos by person |
 | Output  | Yes / No | A / B / C / ... | 1,234,567 | Several groups of photos |
 | Methods | Logistic regression, Support Vector Machine | KNN | Regression | K-means, Topic Modeling |
-| Dataset | `breast cancer` | `iris` | `diabetes` | TBD | 
+| Sample Dataset | `breast cancer` | `iris` | `diabetes` | TBD | 
 
 This tutorial consists of three parts: 1) Data Preparation, 2) Supervised Machine Learning, 3) Unsupervised Machine Learning, and 4) Evaluation of Machine Learning Model. `scikit-learn` is used for example source codes in this tutorial for simplicity and clarity. 
 
