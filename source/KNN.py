@@ -25,15 +25,14 @@ np.random.seed(0)
 #
 # Read dataset from library
 #
-iris = datasets.load_iris()
-cols = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width'] 
-my_dataset = pd.DataFrame(iris.data, columns=cols)
-my_dataset['Class'] = iris.target
+raw_dataset = datasets.load_iris()
+my_dataset = pd.DataFrame(raw_dataset.data, columns=raw_dataset.feature_names)
+my_dataset['class'] = raw_dataset.target
 
 #
 # Convert numeric value to string in class
 #
-my_dataset['Class'].replace([0,1,2],['Setosa','Versicolor','Virginica'], inplace=True)
+my_dataset['class'].replace([0,1,2],raw_dataset.target_names, inplace=True)
 
 #
 # Check data structure, # of rows, # of columns
@@ -51,7 +50,7 @@ print(my_dataset.head())
 # Count data per class
 #
 print('\nCount by class\n')
-print(my_dataset['Class'].value_counts())
+print(my_dataset['class'].value_counts())
 
 #
 # Descriptive statistics
@@ -62,7 +61,7 @@ print(my_dataset.describe())
 #
 # Draw scatter plot
 #
-sns.pairplot(my_dataset,hue='Class',markers='+')
+sns.pairplot(my_dataset,hue='class',markers='+')
 
 #
 # Save plot as PNG file
@@ -72,8 +71,8 @@ sns.pairplot(my_dataset,hue='Class',markers='+')
 #
 #
 #
-X = my_dataset.drop('Class',axis=1)
-y = my_dataset['Class']
+X = my_dataset.drop('class',axis=1)
+y = my_dataset['class']
 
 #
 # Split dataset into traning(X_train, y_train) set and test set(X_test, y_test).
@@ -82,9 +81,9 @@ X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2, random_st
 print(f'\nTrain set : {X_train.shape}, Test set : {y_train.shape}\n')
 
 #
-# Set 5 neighours
+# Set 10 neighours
 #
-k = 10
+k = 5
 knn = KNeighborsClassifier(n_neighbors = k)
 
 ###############################################################################
@@ -110,6 +109,7 @@ knn.fit(X_train, y_train)
 #
 print('\nPredicting...\n')
 y_pred = knn.predict(X_test)
+y_prob = knn.predict_proba(X_test)
 
 ###############################################################################
 #
@@ -120,13 +120,16 @@ y_pred = knn.predict(X_test)
 #
 # Check whether prediction is correct
 #
-results = pd.DataFrame(y_test.array, columns=['Truth'])
-results['Predict'] = y_pred
-results['Result'] = results.apply(lambda row: 'Correct' if row.Truth == row.Predict else 'Wrong', axis=1)
+results = pd.DataFrame(y_test.array, columns=['truth'])
+results['predict'] = y_pred
+results['result']  = results.apply(lambda row: 'correct' if row.truth == row.predict else 'wrong', axis=1)
 print(f'\n{results}\n')
-print(results['Result'].value_counts())
+print(results['result'].value_counts())
 
 #
 # Check accuracy
 #
-print(f'\nAccuracy : {metrics.accuracy_score(y_test,y_pred)}')
+print(f'\nAUC score : {metrics.roc_auc_score(y_test, y_prob, multi_class="ovo")}')
+print(f'Accuracy  : {metrics.accuracy_score(y_test, y_pred)}')
+print(f'Precision  : {metrics.precision_score(y_test, y_pred, average=None)}')
+print(f'Recall     : {metrics.recall_score(y_test, y_pred, average=None)}')

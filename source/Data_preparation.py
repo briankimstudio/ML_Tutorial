@@ -10,6 +10,17 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
 #
+# To generate consistant experimental results
+#
+np.random.seed(0)
+
+###############################################################################
+#
+# 1. Data preparation
+#
+###############################################################################
+
+#
 # Read dataset from library
 #
 raw_dataset = datasets.load_iris()
@@ -43,7 +54,7 @@ print('\nCount by class\n')
 print(my_dataset['class'].value_counts())
 
 #
-#
+# Descriptive statistics
 #
 print('\nDescriptive statistics\n')
 print(my_dataset.describe())
@@ -64,6 +75,7 @@ y = my_dataset['class']
 #
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2, random_state=5)
 print(f'\nTrain set : {X_train.shape}, Test set : {y_train.shape}\n')
+
 #
 # Set 5 neighours
 #
