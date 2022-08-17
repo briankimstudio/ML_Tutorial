@@ -27,7 +27,8 @@ The purpose of this model is to classify binary values(cats or dogs) in the outp
 
 |  | Binary Classification | Multiclass Classification | Regression |Clustering |
 | --- | :---------------: | :-------------------: | :---: | :--------: |
-| Example | Predict cancer | Predict flowers species | Predict housr price | Cluster photos |
+| Example | Predict cancer(yes or no) | Predict flowers species | Predict housr price | Separate photos by person |
+| Output  | Yes / No | A / B / C / ... | 1,234,567 | Several groups of photos |
 | Methods | Logistic regression, Support Vector Machine | KNN | Regression | K-means, Topic Modeling |
 | Dataset | `breast cancer` | `iris` | `diabetes` | TBD | 
 
