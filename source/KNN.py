@@ -22,6 +22,7 @@ np.random.seed(0)
 # 1. Data preparation
 #
 ###############################################################################
+print('\nData preparation...\n')
 
 #
 # Read dataset from library
@@ -78,7 +79,7 @@ y = my_dataset['class']
 #
 # Split dataset into traning(X_train, y_train) set and test set(X_test, y_test).
 #
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2, random_state=5)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=5)
 print(f'\nTraining set : {X_train.shape}, Test set : {y_train.shape}\n')
 
 #
