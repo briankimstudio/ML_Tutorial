@@ -76,14 +76,15 @@ print(results['result'].value_counts())
 #
 print(f'\nAUC score : {metrics.roc_auc_score(y_test, y_prob, multi_class="ovo")}')
 print(f'Accuracy  : {metrics.accuracy_score(y_test, y_pred)}')
-print(f'Precision  : {metrics.precision_score(y_test, y_pred, average=None)}')
-print(f'Recall     : {metrics.recall_score(y_test, y_pred, average=None)}')
+print(f'Precision : {metrics.precision_score(y_test, y_pred, average=None)}')
+print(f'Recall    : {metrics.recall_score(y_test, y_pred, average=None)}')
 ```
 
 Results
 
 Summary of prediction results of KNN model are presented below. It made 28 correct predictions and 2 wrong predictions. AUC score and accuracy is for the model, whereas precision and recall are for each class: setosa, versicolor, and virginica.
 
+__k = 5__
 ```
 correct    28
 wrong       2
@@ -91,11 +92,13 @@ Name: result, dtype: int64
 
 AUC score : 0.997245179063361
 Accuracy  : 0.9333333333333333
-Precision  : [1.         1.         0.84615385]
-Recall     : [1.         0.81818182 1.        ]
+Precision : [1.         1.         0.84615385]
+Recall    : [1.         0.81818182 1.        ]
 ```
 
-Let's modify the `k` to other value and check the results again to find out the impact of the k in the performance of the model. In the case of `k = 10`, the number of correct prediction is increased to 29 and wrong prediction is decreased to 1. Acccordingly, other performance indicators are improved as well.
+Let's modify the `k` to other value and check the results again to find out the impact of the `k` in the performance of the model. In the case of `k = 10`, the number of correct prediction is increased to 29 and wrong prediction is decreased to 1. Acccordingly, other performance indicators are improved as well.
+
+__k = 10__
 
 ```
 correct    29
@@ -104,8 +107,8 @@ Name: result, dtype: int64
 
 AUC score : 0.9986225895316805
 Accuracy  : 0.9666666666666667
-Precision  : [1.         1.         0.91666667]
-Recall     : [1.         0.90909091 1.        ]
+Precision : [1.         1.         0.91666667]
+Recall    : [1.         0.90909091 1.        ]
 ```
 
 
