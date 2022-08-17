@@ -127,9 +127,6 @@ disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=clf.classes_)
 disp.plot()
 plt.show()
 
-# metrics.plot_roc_curve(clf, X_test, y_test) 
-# plt.plot([0, 1], [0, 1], color="navy", lw=1, linestyle="--")
-# plt.show()
 
 #
 # Check whether prediction is correct

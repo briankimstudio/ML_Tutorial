@@ -8,6 +8,7 @@
 | Binary Classification | Logistic Regression | `breast cancer` |
 | Binary Classification | Support Vector Machine | `breast cancer` |
 | Multiclass Classification | K-Nearest Negihbors | `iris` |
+| Multiclass Classification | Decision Tree | `iris` |
 | Multiclass Classification | Random Forest | `iris` |
 
 Supervised machine learning requires input data with features and label. Typical applications are classification(identifying category such as cat or dog) and regression(predicting continuous value such as house price). 
@@ -224,7 +225,92 @@ Recall    : [1.         0.90909091 1.        ]
 
 The question here is what is the best value for the `k`. How we can find it?
 
+### Decision Tree
 
+Model
+```
+#
+# Decision Tree Classifier 
+#
+clf = DecisionTreeClassifier()
+
+###############################################################################
+#
+# 2. Training
+#
+###############################################################################
+
+#
+# Train with training set
+#
+print(f'\nTraining...\n')
+clf.fit(X_train, y_train)
+print(f'Training score : {clf.score(X_train, y_train)}')
+
+###############################################################################
+#
+# 3. Estimating
+#
+###############################################################################
+
+#
+# Predict with test set
+#
+print('\nPredicting...\n')
+y_pred = clf.predict(X_test)
+y_prob = clf.predict_proba(X_test)
+
+###############################################################################
+#
+# 4. Evaluating
+#
+###############################################################################
+
+#
+# Check whether prediction is correct
+#
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
+
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=clf.classes_)
+disp.plot()
+plt.show()
+
+#
+# Check whether prediction is correct
+#
+results = pd.DataFrame(y_test.array, columns=['truth'])
+results['predict'] = y_pred
+results['result']  = results.apply(lambda row: 'correct' if row.truth == row.predict else 'wrong', axis=1)
+print(f'\n{results}\n')
+print(results['result'].value_counts())
+
+#
+# Check accuracy
+#
+print(f'\nAUC score : {metrics.roc_auc_score(y_test, y_prob, multi_class="ovo")}')
+print(f'Accuracy  : {metrics.accuracy_score(y_test, y_pred)}')
+print(f'Precision  : {metrics.precision_score(y_test, y_pred, average=None)}')
+print(f'Recall     : {metrics.recall_score(y_test, y_pred, average=None)}')
+```
+
+Results
+```
+Predicting...
+
+[[ 8  0  0]
+ [ 0  9  2]
+ [ 0  0 11]]
+
+correct    28
+wrong       2
+Name: result, dtype: int64
+
+AUC score : 0.9545454545454546
+Accuracy  : 0.9333333333333333
+Precision  : [1.         1.         0.84615385]
+Recall     : [1.         0.81818182 1.        ]
+```
 
 ### 5. Random Forest
 
