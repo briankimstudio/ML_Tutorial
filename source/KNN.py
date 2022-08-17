@@ -84,7 +84,7 @@ print(f'\nTraining set : {X_train.shape}, Test set : {y_train.shape}\n')
 #
 # Set hyperparameter
 #
-k = 5
+k = 10
 clf = KNeighborsClassifier(n_neighbors = k)
 
 ###############################################################################

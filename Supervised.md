@@ -86,6 +86,12 @@ Summary of prediction results of KNN model are presented below. It made 28 corre
 
 __k = 5__
 ```
+Predicting...
+
+[[ 8  0  0]
+ [ 0  9  2]
+ [ 0  0 11]]
+
 correct    28
 wrong       2
 Name: result, dtype: int64
@@ -101,6 +107,12 @@ Let's modify the `k` to other value and check the results again to find out the 
 __k = 10__
 
 ```
+Predicting...
+
+[[ 8  0  0]
+ [ 0 10  1]
+ [ 0  0 11]]
+ 
 correct    29
 wrong       1
 Name: result, dtype: int64
@@ -186,6 +198,11 @@ print(f'Recall    : {metrics.recall_score(y_test, y_pred, pos_label="malignant")
 
 Results
 ```
+Predicting...
+
+[[108   2]
+ [  1  60]]
+
 correct    168
 wrong        3
 Name: result, dtype: int64
