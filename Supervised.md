@@ -21,6 +21,50 @@ For social science research, regression is used to find relationship between ind
 
 However, in the area of machine learning, the important part just starts from here. After fitting the data, we save coefficients and intersepts as a computer file, which is called a 'trained machine learning model' Then, new data are fed into the model to predict value of dependent variable.
 
+Model
+```
+#
+# Set hyperparameter
+#
+clf = LinearRegression()
+
+###############################################################################
+#
+# 2. Training
+#
+###############################################################################
+
+print('\nTraining...\n')
+clf.fit(X, y)
+print(f'Training score : {clf.score(X_train, y_train)}')
+print(f'Coefficient : {clf.coef_}')
+
+###############################################################################
+#
+# 3. Estimating
+#
+###############################################################################
+
+print('\nPredicting...\n')
+y_pred = clf.predict(X_test)
+
+###############################################################################
+#
+# 4. Evaluating
+#
+###############################################################################
+
+print(f'MSE : {mean_squared_error(y_test, y_pred)}')
+print(f'R2  : {r2_score(y_test, y_pred)}')
+```
+
+Results
+```
+Predicting...
+
+MSE : 2864.449455303467
+R2  : 0.5457325573378824
+```
 ### Binary Classification
 
 ### 2. Logistic Regression

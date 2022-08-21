@@ -65,6 +65,9 @@ y = my_dataset['class']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=5)
 print(f'\nTraining set : {X_train.shape}, Test set : {y_train.shape}\n')
 
+#
+# Set hyperparameter
+#
 clf = LinearRegression()
 
 ###############################################################################
@@ -93,23 +96,5 @@ y_pred = clf.predict(X_test)
 #
 ###############################################################################
 
-# cm = confusion_matrix(y_test, y_pred)
-# print(cm)
-# disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels = clf.classes_)
-# disp.plot()
-# plt.show()
-
-# plt.scatter(X_test, y_test, color="black")
-# plt.plot(X_test, y_pred, linewidth=2)
-
-# plt.xticks(())
-# plt.yticks(())
-
-# plt.show()
-
 print(f'MSE : {mean_squared_error(y_test, y_pred)}')
 print(f'R2  : {r2_score(y_test, y_pred)}')
-
-# print(f'\nAccuracy  : {metrics.accuracy_score(y_test,y_pred)}')
-# print(f'Precision : {metrics.precision_score(y_test, y_pred)}')
-# print(f'Recall    : {metrics.recall_score(y_test, y_pred)}')
