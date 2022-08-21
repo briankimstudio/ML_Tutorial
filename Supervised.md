@@ -244,7 +244,7 @@ Precision : 0.967741935483871
 Recall    : 0.9836065573770492
 ```
 
-### Comparisions of performance 
+### Performance comparison of binary classification models 
 
 | | AUC Score | Accuracy |
 |---|---:|---:|
@@ -527,7 +527,7 @@ Precision  : [1.         0.83333333 0.9       ]
 Recall     : [1.         0.90909091 0.81818182] 
 ```
 
-### Comparisions of performance 
+### Performance comparison of multiclass classification models 
 
 | | AUC Score | Accuracy |
 |---|---:|---:|
