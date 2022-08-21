@@ -12,8 +12,10 @@ By comparing statistical analysis and machine learning, we can have a clear view
 |--------:| :----------------: | :--------------: |
 | Major User    | Social scientist | Computer scientist |
 | Purpose | Testing hypothesis | Predicting value       |
+| Cause | Independent variables | Features       |
+| Effect | Dependent variable | Label(Class)       |
 | Output | Coefficients | Trained model, predictions |
-| Index | p-value, SRMR, GFI,NFI,CFI, RMSEA, ... | AUC, accuracy, precision, recall, ... |
+| Evaluation | p-value, SRMR, GFI,NFI,CFI, RMSEA, ... | AUC, accuracy, precision, recall, ... |
 | Platform   | R, jamovi, JASP, SPSS, ... | Python, R, ... |
 | Package | ... | sciket learn, PyTorch, Tensorflow, Keras, ... |
 
