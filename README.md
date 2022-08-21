@@ -4,7 +4,7 @@ Originally, computer program executes rules provided by humans. But, in some app
 
 Social science researchers are familiar with various types of statistical analysis methods. Fortunately, these methods are very similar to popular machine learning methods.
 
-__Statistical Analysis vs Machine Learning__
+## Statistical Analysis vs Machine Learning
 
 By comparing statistical analysis and machine learning, we can have a clear view of these two fields.  
 
@@ -19,13 +19,29 @@ By comparing statistical analysis and machine learning, we can have a clear view
 | Platform   | R, jamovi, JASP, SPSS, ... | Python, R, ... |
 | Package | ... | sciket learn, PyTorch, Tensorflow, Keras, ... |
 
-__Purpose of Machine Learning__
+## Purpose of Machine Learning
 
-Unlike statistical analysis, the purpose of machine learning is to predict a value that is unknown at the time of prediction. The first type of problem is classification. Let's assume that we have a task that classifes cats and dogs, and we have a machine learning model called 'cat detector'. After inspecting an image, then it predicts whether the image is a cat or a dog just like in the figure below.
+Unlike statistical analysis, the purpose of machine learning is to predict a value that is unknown at the time of prediction using the knowledge acquired via training. 
+
+## Type of Machine Learning
+
+Let's assume that we have a task that classifes cats and dogs, and we have a machine learning model called 'cat detector'. After inspecting an image, then it predicts whether the image is a cat or a dog just like in the figure below.
 
 ![overview](images/overview.png)
 
-The purpose of this model is to classify binary values(cats or dogs) in the output. Thus, it is called a 'binary classification'. If there are more than two types of outputs, then it is called 'multiclass classification'. The second type of problem is 'regression'. In the case of house price estimation, it is to predict a continuous number, which is called 'regression'. The third type of problem is 'clustering'. Let's assume that there are lots of data and we would like to cluster them into multiple groups with similar characteristics. From machine learning's perspective, classification and regression belong to [supervised learning](Supervised.md), whereas clustering belongs to [unsupervised learning](Unsupervised.md).
+### Classification
+
+The first type of problem is classification. The goal of this model is to classify binary values(cats or dogs) in the output. Thus, it is called a 'binary classification'. If there are more than two types of output, then it is called 'multiclass classification'. 
+
+### Regression
+
+The second type of problem is 'regression'. In the case of house price estimation, the goal of the model is to predict a continuous value, as opposed to predict a class.
+
+### Clustering
+
+The third type of problem is 'clustering'. Let's assume that there are lots of data and we would like to cluster them into multiple groups with similar characteristics. 
+
+From machine learning's perspective, classification and regression belong to [supervised learning](Supervised.md), whereas clustering belongs to [unsupervised learning](Unsupervised.md).
 
 |  | Binary Classification | Multiclass Classification | Regression |Clustering |
 | ---: | :---------------: | :-------------------: | :---: | :--------: |
@@ -66,5 +82,12 @@ This tutorial consists of three parts: 1) Data Preparation, 2) Supervised Machin
    - Receiver Operating Charasteristic(ROC) curve: Trus positive rate(TPR), False positive rate(FPR)
    - Area Under the ROC Curve(AUC)
 6. [Source code template](Source_code.md)
-   - Structure
+   - Supervised model
+   - Unsupervised model
    - Reusability
+
+### Miscellaneous
+
+- Major class : The class with larger number of samples than the other in the dataset.
+- Minor class : The class with less number of samples than the other in the dataset.
+- Baseline accuracy : The proportion of the major class in the dataset.
