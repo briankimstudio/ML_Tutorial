@@ -27,6 +27,90 @@ However, in the area of machine learning, the important part just starts from he
 
 Logistic regression is a binary classification.
 
+Model
+```
+#
+# Set hyperparameter
+#
+clf = LogisticRegression(random_state=0)
+
+###############################################################################
+#
+# 2. Training
+#
+###############################################################################
+
+#
+# Train with training set
+#
+print(f'\nTraining...\n')
+clf.fit(X_train, y_train)
+print(f'Training score : {clf.score(X_train, y_train)}')
+
+###############################################################################
+#
+# 3. Estimating
+#
+###############################################################################
+
+#
+# Predict with test set
+#
+print('\nPredicting...\n')
+y_pred = clf.predict(X_test)
+y_prob = clf.predict_proba(X_test)
+
+###############################################################################
+#
+# 4. Evaluating
+#
+###############################################################################
+
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
+
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=clf.classes_)
+disp.plot()
+plt.show()
+
+metrics.RocCurveDisplay.from_estimator(clf, X_test, y_test)
+plt.plot([0, 1], [0, 1], color="navy", lw=1, linestyle="--")
+plt.show()
+
+#
+# Check whether prediction is correct
+#
+results = pd.DataFrame(y_test.array, columns=['truth'])
+results['predict'] = y_pred
+results['result']  = results.apply(lambda row: 'correct' if row.truth == row.predict else 'wrong', axis=1)
+print(f'\n{results}\n')
+print(results['result'].value_counts())
+
+#
+# Check performance of the model
+#
+print(f'\nAUC score : {metrics.roc_auc_score(y_test, y_prob[:,1])}')
+print(f'Accuracy  : {metrics.accuracy_score(y_test, y_pred)}')
+print(f'Precision : {metrics.precision_score(y_test, y_pred, pos_label="malignant")}')
+print(f'Recall    : {metrics.recall_score(y_test, y_pred, pos_label="malignant")}')
+```
+
+Results
+```
+Predicting...
+
+[[107   3]
+ [  3  58]]
+
+correct    165
+wrong        6
+Name: result, dtype: int64
+
+AUC score : 0.9923994038748137
+Accuracy  : 0.9649122807017544
+Precision : 0.9508196721311475
+Recall    : 0.9508196721311475
+```
 ### Multiclass Classification
 
 ### 3. Support Vector Machine (SVM)
