@@ -37,8 +37,31 @@ The purpose of this model is to classify binary values(cats or dogs) in the outp
 This tutorial consists of three parts: 1) Data Preparation, 2) Supervised Machine Learning, 3) Unsupervised Machine Learning, and 4) Evaluation of Machine Learning Model. `scikit-learn` is used for example source codes in this tutorial for simplicity and clarity. 
 
 1. [Dataset](Dataset.md)
-2. [Data Preparation](Data_preparation.md)
-3. [Supervised Machine Learning](Supervised.md)
-4. [Unsupervised Machine Learning](Unsupervised.md)
-5. [Evaluation of Machine Learning Model](Evaluation.md)
+   - Dimension
+   - Balance checking
+2. [Data preparation](Data_preparation.md)
+   - Visualization
+   - Cross validataion
+   - Hyperparameter optimization
+
+3. [Supervised machine learning](Supervised.md)
+   - Regression
+     - Linear regression
+   - Binary classification
+     - Logistic regression
+     - Support vector machine
+   - Multiclass classification
+     - K-nearest neighbors
+     - Decision tree
+     - Random forests   
+4. [Unsupervised machine learning](Unsupervised.md)
+   - K-means clustering
+   - Topic modeling
+5. [Evaluation of machine learning model](Evaluation.md)
+   - Confusion matrix
+   - Accuracy, precision, recall
+   - Receiver Operating Charasteristic(ROC) curve: Trus positive rate(TPR), False positive rate(FPR)
+   - Area Under the ROC Curve(AUC)
 6. [Source code template](Source_code.md)
+   - Structure
+   - Reusability
