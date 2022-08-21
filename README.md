@@ -36,13 +36,16 @@ The purpose of this model is to classify binary values(cats or dogs) in the outp
 
 This tutorial consists of three parts: 1) Data Preparation, 2) Supervised Machine Learning, 3) Unsupervised Machine Learning, and 4) Evaluation of Machine Learning Model. `scikit-learn` is used for example source codes in this tutorial for simplicity and clarity. 
 
-1. [Dataset](Dataset.md)
-   - Dimension
-   - Balance checking
+1. [Sample datasets for this tutorial](Dataset.md)
+   - breast cancer
+   - iris
+   - diabetes
+
 2. [Data preparation](Data_preparation.md)
-   - Visualization
-   - Cross validataion
-   - Hyperparameter optimization
+   - Reading raw data
+   - Inspecting dimension(rows, columns) and data type
+   - Inspecting value of the dataset
+   - Visualizing correlation among columns
 
 3. [Supervised machine learning](Supervised.md)
    - Regression

@@ -2,7 +2,7 @@
 
 Data preparation covers folowing steps.
 
-1. Reading data
+1. Reading raw data
 2. Inspecting dimension(rows, columns) and data type
 3. Inspecting value of the dataset
 4. Visualizing correlation among columns
@@ -13,7 +13,7 @@ While `numpy` is convenient for manuplicating array type of data, `pandas` is us
 
 ### 1. Reading raw data
 
-In this example, we first read raw data using `sclearn`'s builtin dataset. Then, convert it to `DataFrame` format with features(`raw_dataset.data`) and class(`raw_dataset.target`)
+In this example, we first read raw data using `scikit-learn`'s built-in dataset. Then, convert it to `DataFrame` type with features(`raw_dataset.data`) and class(`raw_dataset.target`)
 
 ```
 from sklearn import datasets
@@ -117,4 +117,4 @@ sns.pairplot(my_dataset,hue='class',markers='+')
 
 ![corrlation](images/correlation.png)
 
-It is impractical to visualize correlation this way if there is a large number of features in the dataset.
+However, it is impractical to visualize correlation this way if there is a large number of features in the dataset.
