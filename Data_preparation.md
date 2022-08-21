@@ -64,7 +64,19 @@ print(my_dataset.head())
 3                4.6               3.1                1.5               0.2      0
 4                5.0               3.6                1.4               0.2      0
 ```
+#### Descriptive statistics
 
+To show descriptive statistics, use `describe` function from `pandas`. 
+
+```
+print(my_dataset.describe().T)
+
+                   count      mean       std  min  25%   50%  75%  max
+sepal length (cm)  150.0  5.843333  0.828066  4.3  5.1  5.80  6.4  7.9
+sepal width (cm)   150.0  3.057333  0.435866  2.0  2.8  3.00  3.3  4.4
+petal length (cm)  150.0  3.758000  1.765298  1.0  1.6  4.35  5.1  6.9
+petal width (cm)   150.0  1.199333  0.762238  0.1  0.3  1.30  1.8  2.5
+```
 ### Data conversion
 
 All features here are numerical data, but, the class is a categorical data. Thus, we convert class from numeric to name of species to understand it easily.
