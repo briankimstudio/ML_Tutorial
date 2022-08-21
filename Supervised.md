@@ -155,7 +155,6 @@ Accuracy  : 0.9649122807017544
 Precision : 0.9508196721311475
 Recall    : 0.9508196721311475
 ```
-### Multiclass Classification
 
 ### 3. Support Vector Machine (SVM)
 
@@ -244,6 +243,15 @@ Accuracy  : 0.9824561403508771
 Precision : 0.967741935483871
 Recall    : 0.9836065573770492
 ```
+
+### Comparisions of performance 
+
+| | AUC Score | Accuracy |
+|---|---:|---:|
+| Logistic regression | 0.99 | 0.96 |  
+| SVM | 0.98 | 0.98 |
+
+### Multiclass Classification
 
 ### 4. K-Nearest Negihbors (KNN)
 
@@ -518,3 +526,11 @@ Accuracy  : 0.9
 Precision  : [1.         0.83333333 0.9       ]
 Recall     : [1.         0.90909091 0.81818182] 
 ```
+
+### Comparisions of performance 
+
+| | AUC Score | Accuracy |
+|---|---:|---:|
+| K-Nearest Neighbors  | 1.00 | 0.96 |  
+| Decision Tree | 0.95 | 0.93 |
+| Random Forest | 0.99 | 0.90 |
