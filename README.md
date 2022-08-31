@@ -72,7 +72,11 @@ This tutorial consists of three parts: 1) Data Preparation, 2) Supervised Machin
    - Multiclass classification
      - K-nearest neighbors
      - Decision tree
-     - Random forests   
+     - Random forests
+   - Overfitting
+     - K fold cross validation
+   - Hyperparameter optimization
+     - Gridsearch
 4. [Unsupervised machine learning](Unsupervised.md)
    - K-means clustering
    - Topic modeling
