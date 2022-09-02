@@ -58,33 +58,35 @@ This tutorial consists of three parts: 1) Data Preparation, 2) Supervised Machin
    - diabetes
 
 2. [Data preparation](Data_preparation.md)
-   - Reading raw data
-   - Inspecting dimension(rows, columns) and data type
-   - Inspecting value of the dataset
-   - Visualizing correlation among columns
+   - [Reading raw data](Data_preparation.md#1-reading-raw-data)
+   - [Inspecting dimension(rows, columns) and data type](Data_preparation.md#2-inspecting-dimensionnumber-of-rows-number-of-columns-and-data-type)
+   - [Inspecting value of the dataset](Data_preparation.md#3-inspecting-value-of-the-dataset)
+   - [Visualizing correlation among columns](Data_preparation.md#4-visualizing-correlation-among-columns)
 
 3. [Supervised machine learning](Supervised.md)
-   - Regression
-     - Linear regression
+   - [Regression](Supervised.md#regression)
+     - [Linear regression](Supervised.md#1-linear-regression)
    - [Binary classification](Supervised.md#binary-classification)
-     - Logistic regression
-     - Support vector machine
-   - Multiclass classification
-     - K-nearest neighbors
-     - Decision tree
-     - Random forests
+     - [Logistic regression](Supervised.md#2-logistic-regression)
+     - [Support vector machine](Supervised.md#3-support-vector-machine-svm)
+   - [Multiclass classification](Supervised.md#multiclass-classification)
+     - [K-nearest neighbors](Supervised.md#4-k-nearest-negihbors-knn)
+     - [Decision tree](Supervised.md#decision-tree)
+     - [Random forests](Supervised.md#5-random-forest)
+     - [Performance comparision of multiclass classification models](Supervised.md#performance-comparison-of-multiclass-classification-models)
    - Overfitting
      - K fold cross validation
    - Hyperparameter optimization
      - Gridsearch
+   
 4. [Unsupervised machine learning](Unsupervised.md)
    - K-means clustering
    - Topic modeling
 5. [Evaluation of machine learning model](Evaluation.md)
-   - Confusion matrix
+   - [Confusion matrix](Evaluation.md#1-confusion-matrix)
    - Accuracy, precision, recall
-   - Receiver Operating Charasteristic(ROC) curve: Trus positive rate(TPR), False positive rate(FPR)
-   - Area Under the ROC Curve(AUC)
+   - [Receiver Operating Charasteristic(ROC) curve](Evaluation.md#2-receiver-operating-charasteristicroc-curve): Trus positive rate(TPR), False positive rate(FPR)
+   - [Area Under the ROC Curve(AUC)](Evaluation.md#3-area-under-the-roc-curveauc)
 6. [Source code template](Source_code.md)
    - Supervised model
    - Unsupervised model

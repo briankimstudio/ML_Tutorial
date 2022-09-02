@@ -77,7 +77,7 @@ svc = svm.SVC(probability=True, random_state=0)
 #
 # Hyperparameter optimization
 #
-clf_grid = GridSearchCV(svc, parameters)
+clf_grid = GridSearchCV(svc, parameters, n_jobs=-1)
 
 ###############################################################################
 #
@@ -93,7 +93,7 @@ print(f'\nTraining...\n')
 clf_grid.fit(X_train, y_train)
 print(f'Training score : {clf_grid.score(X_train, y_train)}')
 print(f'Best params : {clf_grid.best_params_}')
-print(f'Cross validation results : {pd.DataFrame(clf_grid.cv_results_).T}')
+print(f'Cross validation results : \n{pd.DataFrame(clf_grid.cv_results_).T}')
 
 #
 # Select estimator trained with best parameters

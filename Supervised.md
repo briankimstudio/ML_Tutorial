@@ -534,3 +534,90 @@ Recall     : [1.         0.90909091 0.81818182]
 | K-Nearest Neighbors  | 1.00 | 0.96 |  
 | Decision Tree | 0.95 | 0.93 |
 | Random Forest | 0.99 | 0.90 |
+
+### Overfitting problem
+
+Overfitting means the circumstance that the model performs well with the traning data but performs worse with the actual data. It happens when the model considered too much details of the data during the training phase. Therefor, the model works well for only training data and generalization of the model would be limited.
+
+### K fold cross validation
+
+Regarding overfitting, one of the cauase is inappropriate split of training and validation dataset. For example, if all outliers are in training dataset, then, the model can not perform well with validation dataset. Therefore, it is necessary to train the model with different combination of training and validation dataset repeatedly in order to minimize the impact of outliers or abnormal data.
+
+```
+print(f'\nTraining...\n')
+for n in range(2,10,1):
+    kfold = KFold(n_splits=n)
+    scores = cross_val_score(clf, X_train, y_train, cv=kfold, n_jobs=-1)
+    print(f'{n} fold cross validataion score(mean): {scores.mean()}')
+    print(f'{n} fold cross validataion score(sd)  : {scores.std()}')
+```
+Results
+```
+Training...
+
+2 fold cross validataion score(mean): 0.9296482412060302
+2 fold cross validataion score(sd)  : 0.005025125628140725
+3 fold cross validataion score(mean): 0.944691273638642
+3 fold cross validataion score(sd)  : 0.017844033477176696
+4 fold cross validataion score(mean): 0.9395707070707071
+4 fold cross validataion score(sd)  : 0.025921086773443264
+5 fold cross validataion score(mean): 0.9421202531645569
+5 fold cross validataion score(sd)  : 0.03066493252634119
+6 fold cross validataion score(mean): 0.9370948288858737
+6 fold cross validataion score(sd)  : 0.036586912281119786
+7 fold cross validataion score(mean): 0.9369405656999642
+7 fold cross validataion score(sd)  : 0.04270733025003529
+8 fold cross validataion score(mean): 0.9394897959183672
+8 fold cross validataion score(sd)  : 0.052986505476384414
+9 fold cross validataion score(mean): 0.9395061728395062
+9 fold cross validataion score(sd)  : 0.05676710649997434
+```
+
+### Hyperparameter optimization
+
+Typically, machine learning model needs specific set of conditions to perform training. These condition is called 'hyperparameter' and need to be specified by user. But, it is impossible to know what is the best value for hyperparameter, so, we need to repeat the training with different set of parameter, then, use the best one for the final training. 
+
+### Gridsearch
+
+Gridsearch is a feature to automate this process and pick the best hyperparameter for you.
+
+```
+parameters = {'kernel': ('linear','rbf'), 'C':[1,10]}
+svc = svm.SVC(probability=True, random_state=0)
+clf_grid = GridSearchCV(svc, parameters)
+
+#
+# Train with training set
+#
+print(f'\nTraining...\n')
+clf_grid.fit(X_train, y_train)
+print(f'Training score : {clf_grid.score(X_train, y_train)}')
+print(f'Best params : {clf_grid.best_params_}')
+print(f'Cross validation results : {pd.DataFrame(clf_grid.cv_results_).T}')
+clf = clf_grid.best_estimator_
+```
+
+Results
+```
+Training...
+
+Training score : 0.9597989949748744
+Best params : {'C': 1, 'kernel': 'linear'}
+Cross validation results :
+                                              0                          1                              2                           3
+mean_fit_time                          3.837402                   0.014985                      14.519973                    0.012566
+std_fit_time                           1.437212                   0.004439                       3.664709                    0.001018
+mean_score_time                             0.0                   0.002014                       0.000798                    0.002388
+std_score_time                              0.0                   0.002466                       0.000978                    0.000493
+param_C                                       1                          1                             10                          10
+param_kernel                             linear                        rbf                         linear                         rbf
+params             {'C': 1, 'kernel': 'linear'}  {'C': 1, 'kernel': 'rbf'}  {'C': 10, 'kernel': 'linear'}  {'C': 10, 'kernel': 'rbf'}
+split0_test_score                        0.9625                      0.925                         0.9625                       0.925
+split1_test_score                          0.95                     0.9625                         0.9375                       0.925
+split2_test_score                         0.925                      0.875                         0.9125                         0.9
+split3_test_score                      0.962025                   0.924051                       0.949367                    0.924051
+split4_test_score                      0.886076                   0.810127                       0.911392                    0.835443
+mean_test_score                         0.93712                   0.899335                       0.934652                    0.901899
+std_test_score                         0.028923                   0.052554                       0.020159                    0.034577
+rank_test_score                               1                          4                              2                           3
+```
