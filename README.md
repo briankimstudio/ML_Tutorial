@@ -66,7 +66,7 @@ This tutorial consists of three parts: 1) Data Preparation, 2) Supervised Machin
 3. [Supervised machine learning](Supervised.md)
    - Regression
      - Linear regression
-   - Binary classification
+   - [Binary classification](Supervised.md#binary-classification)
      - Logistic regression
      - Support vector machine
    - Multiclass classification
