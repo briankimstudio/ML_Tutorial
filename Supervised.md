@@ -593,20 +593,20 @@ print(f'\nTraining...\n')
 clf_grid.fit(X_train, y_train)
 print(f'Training score : {clf_grid.score(X_train, y_train)}')
 print(f'Best params : {clf_grid.best_params_}')
-print(f'Cross validation results : \n{pd.DataFrame(clf_grid.cv_results_).T}')
+print(f'Grid search results : \n{pd.DataFrame(clf_grid.cv_results_).T}')
 clf = clf_grid.best_estimator_
 ```
 
 Results
 
-After gridsearch, it indicates that hyperparameters of {linear,1} shows the best performance than the others.
+After gridsearch, it indicates that hyperparameters of {linear,1} shows the best performance than the others. By default, it performs 5 fold cross validation and the results are presented from  `split0_test_score` to `split4_test_score`.
 
 ```
 Training...
 
 Training score : 0.9597989949748744
 Best params : {'C': 1, 'kernel': 'linear'}
-Cross validation results :
+Grid search results :
                                               0                          1                              2                           3
 mean_fit_time                          3.837402                   0.014985                      14.519973                    0.012566
 std_fit_time                           1.437212                   0.004439                       3.664709                    0.001018
