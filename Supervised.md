@@ -579,7 +579,7 @@ Typically, machine learning model needs specific set of conditions to perform tr
 
 ### Gridsearch
 
-Gridsearch is a feature to automate this process and pick the best hyperparameter for you.
+Gridsearch is a feature to automate this process and pick the best hyperparameter for you. In this example, we used two hyperparameters: kernel and C. There are two types of kernel and two different value of C. Thus, overall we need to repeat the training four times in order to identify best combination of two hyperparameters({linear,1}, {linear,10}, {rbf,1}, {rbf,10}).
 
 ```
 parameters = {'kernel': ('linear','rbf'), 'C':[1,10]}
@@ -593,11 +593,14 @@ print(f'\nTraining...\n')
 clf_grid.fit(X_train, y_train)
 print(f'Training score : {clf_grid.score(X_train, y_train)}')
 print(f'Best params : {clf_grid.best_params_}')
-print(f'Cross validation results : {pd.DataFrame(clf_grid.cv_results_).T}')
+print(f'Cross validation results : \n{pd.DataFrame(clf_grid.cv_results_).T}')
 clf = clf_grid.best_estimator_
 ```
 
 Results
+
+After gridsearch, it indicates that hyperparameters of {linear,1} shows the best performance than the others.
+
 ```
 Training...
 
