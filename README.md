@@ -87,7 +87,11 @@ This tutorial consists of three parts: 1) Data Preparation, 2) Supervised Machin
    - Accuracy, precision, recall
    - [Receiver Operating Charasteristic(ROC) curve](Evaluation.md#2-receiver-operating-charasteristicroc-curve): Trus positive rate(TPR), False positive rate(FPR)
    - [Area Under the ROC Curve(AUC)](Evaluation.md#3-area-under-the-roc-curveauc)
-6. [Source code template](Source_code.md)
+
+6. Deep learning
+   - [Neural network](Neural_network.md)
+
+7. [Source code template](Source_code.md)
    - Supervised model
    - Unsupervised model
    - Reusability
