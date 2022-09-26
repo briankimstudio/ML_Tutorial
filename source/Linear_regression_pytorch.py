@@ -3,11 +3,11 @@ import pandas as pd
 from torch.autograd import Variable
 
 x = pd.DataFrame([[1.0,2.0],[3.0,4.0],[5.0,6.0]])
-y = pd.DataFrame(1,2,3)
+y = pd.DataFrame([1,2,3])
 # x_data = torch.Tensor([[1.0], [2.0], [3.0]])
 x_data = torch.Tensor(x.values)
 # y_data = torch.Tensor([[2.0], [4.0], [6.0]])
-yy_data = torch.Tensor(y.values)
+y_data = torch.Tensor(y.values)
 
 class LinearRegressionModel(torch.nn.Module):
     def __init__(self):
@@ -23,11 +23,11 @@ criterion = torch.nn.MSELoss()
 optimizer = torch.optim.SGD(our_model.parameters(), lr = 0.01)
 
 for epoch in range(10):
- 
+
     # Forward pass: Compute predicted y by passing
     # x to the model
     pred_y = our_model(x_data)
-    print(f'pred dim: {pred_y.shape}, y_data dim: {y_data.shape}')
+    # print(f'pred dim: {pred_y.shape}, y_data dim: {y_data.shape}')
     # Compute and print loss
     loss = criterion(pred_y, y_data)
  
@@ -38,6 +38,7 @@ for epoch in range(10):
     optimizer.step()
     print('epoch {}, loss {}'.format(epoch, loss.item()))
 
+new_var = Variable(torch.Tensor([[4.0,5.0]]))
 new_var = Variable(torch.Tensor([[4.0,5.0]]))
 pred_y = our_model(new_var)
 print("predict (after training)", 4, our_model(new_var).item())
